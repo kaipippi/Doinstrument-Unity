@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[System.Serializable]
+public class Clip{
+    public AudioClip AudioClip;
+    public float transpose;
+}
+
 public class keyboard : MonoBehaviour
 {
     public int X = 0;
@@ -11,6 +17,7 @@ public class keyboard : MonoBehaviour
     public Transform parent;
     public Text KeyCharacter;
     public List<GameObject> Keys = new List<GameObject>();
+    public Clip[] AudioClips;
     float P;
     
 
@@ -21,6 +28,16 @@ public class keyboard : MonoBehaviour
             Keys[l].GetComponent<AudioSource>().volume=value;
         }
 
+    }
+
+    public void OnAudioClipChange(int num)
+    {
+        for (int k = 0; k < Keys.Count; k++)
+        {
+            P = Mathf.Pow(2,(k-AudioClips[num].transpose)/12f);
+            Keys[k].GetComponent<AudioSource>().pitch= P;
+            Keys[k].GetComponent<AudioSource>().clip=AudioClips[num].AudioClip;
+        }
     }
 
 
