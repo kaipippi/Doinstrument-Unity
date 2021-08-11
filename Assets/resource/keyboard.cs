@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//音源のデータベースの書式
+//AudioClipが音源
+//transposeは音源はCから何回トランスポーズした高さの音か
 [System.Serializable]
 public class Clip{
     public AudioClip AudioClip;
@@ -11,6 +14,7 @@ public class Clip{
 
 public class keyboard : MonoBehaviour
 {
+    //絶対publicじゃなくていいやつある
     public int X = 0;
     public GameObject White;
     public GameObject Black;
@@ -20,7 +24,7 @@ public class keyboard : MonoBehaviour
     public Clip[] AudioClips;
     float P;
     
-
+    //音量
     public void OnVolumeChange(float value)
     {
         for (int l = 0; l < Keys.Count; l++)
@@ -30,6 +34,7 @@ public class keyboard : MonoBehaviour
 
     }
 
+    //音源変更
     public void OnAudioClipChange(int num)
     {
         for (int k = 0; k < Keys.Count; k++)
@@ -43,7 +48,8 @@ public class keyboard : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
+    {   
+        //鍵盤の錬成
         for (int i = 0; i < 3; i++)
         {
             for (int j = 0; j < 6; j++)
@@ -74,6 +80,8 @@ public class keyboard : MonoBehaviour
             Keys[X-1].GetComponent<RectTransform>().localPosition=new Vector3(350*i-125,20,0);
             X++;
         }
+
+        //鍵盤に文字を刻む
         for (int k = 0; k < Keys.Count; k++){
             P = Mathf.Pow(2,(k-11f)/12f);
             Keys[k].GetComponent<AudioSource>().pitch= P;
@@ -186,6 +194,8 @@ public class keyboard : MonoBehaviour
     }
 
     // Update is called once per frame
+    //入力うけつけ
+    //おんなじ対応表を二回書いてることになるので多分半分の長さくらいで書ける
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Z))
