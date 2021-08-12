@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 916791505585990404}
   - component: {fileID: 5530200621321986826}
   - component: {fileID: 6980938431950022275}
+  - component: {fileID: 862067093614797178}
   m_Layer: 5
   m_Name: Black
   m_TagString: Untagged
@@ -198,7 +199,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8257005364741647110}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 862067093614797178}
+        m_MethodName: click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5530200621321986826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,8 +228,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 6980938431950022275}
-          m_MethodName: Play
+        - m_Target: {fileID: 862067093614797178}
+          m_MethodName: pointordown
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -227,12 +239,12 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - eventID: 3
+  - eventID: 14
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 6980938431950022275}
-          m_MethodName: Stop
+        - m_Target: {fileID: 862067093614797178}
+          m_MethodName: click
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -338,3 +350,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &862067093614797178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4131805446773690987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f761250e74a28e24684e31c3a20b8e95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

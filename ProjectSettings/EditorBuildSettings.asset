@@ -4,7 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Keyboard.unity
+    guid: 24d767682c2c41a41a6a1637c3f33c89
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: d02c5cf59ad867443b770bc7c649e204,
       type: 2}
