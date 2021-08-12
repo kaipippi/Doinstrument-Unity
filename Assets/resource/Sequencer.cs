@@ -22,7 +22,6 @@ public class Sequencer : MonoBehaviour
      new Vector2Int(3, 59),new Vector2Int(1, 57),new Vector2Int(1, 58),new Vector2Int(1, 59),new Vector2Int(3, 61),new Vector2Int(3, 62),new Vector2Int(3, 63),new Vector2Int(3, 60),new Vector2Int(1, 61),new Vector2Int(1, 62),new Vector2Int(1, 63),
      new Vector2Int(1, 60),new Vector2Int(0, 56),new Vector2Int(0, 60),new Vector2Int(0, 62),new Vector2Int(1, 31)};
     Toggle toggle;
-
     //音量
     public void VolumeChange(float vol)
     {
@@ -34,6 +33,7 @@ public class Sequencer : MonoBehaviour
                 Switches[i,j].GetComponent<AudioSource>().volume= vol;
             }
         }
+    
     }
 
     //BPMのスライダーによる変更
